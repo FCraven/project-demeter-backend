@@ -49,7 +49,7 @@ router.put('/:id', async (req,res,next)=> {
 
 router.delete('/:id', async (req,res,next)=> {
   try {
-    const deletedUser = await User.findByIdAndDelete(req.params.id);
+    const deletedUser = await User.findByIdAndDelete(req.params.id, { select: '-password'});
     if(!deletedUser) {
       return res.send('There is no user by that id to delete.')
     }
