@@ -27,7 +27,7 @@ router.get('/:id', async (req,res,next)=> {
 router.post('/', async (req,res,next) => {
   try {
     const newUser = await User.create(req.body);
-    res.json({ ...newUser, password: null })
+    res.json(newUser)
   } catch(err) {
       console.log(err)
       next(err);
