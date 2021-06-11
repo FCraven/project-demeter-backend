@@ -14,6 +14,7 @@ if(process.env.NODE_ENV === 'production') {
     useUnifiedTopology: true
   })
 } else {
+  console.log('Using local database =-> demeter')
   mongoose.connect('mongodb://localhost/demeter', {
     useNewUrlParser: true,
     useUnifiedTopology: true
