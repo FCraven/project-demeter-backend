@@ -8,17 +8,17 @@ const { User } = require('./db')
 const routes = require('./controllers')
 
 
-// if(process.env.NODE_ENV === 'production') {
+if(process.env.NODE_ENV === 'production') {
   mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
-// } else {
-  // mongoose.connect('mongodb://localhost/project-demeter-db', {
-  //   useNewUrlParser: true,
-  //   useUnifiedTopology: true
-  // })
-//}
+} else {
+  mongoose.connect('mongodb://localhost/demeter', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  })
+}
 
 app.use(morgan('dev'))
 app.use(express.json());
