@@ -4,7 +4,6 @@ const app = express();
 const morgan = require('morgan')
 const PORT = process.env.PORT || 3000;
 const mongoose = require('mongoose')
-const { User } = require('./db')
 const routes = require('./controllers')
 
 
